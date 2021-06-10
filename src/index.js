@@ -1,19 +1,20 @@
 const express = require('express')
 const app = express()
-const path = require('path')
 
 // Routes
 const routes = require('./routes/routes')
 
+const pathJoin = require('./utils/pathJoin')
+
 app.use(express.json())
-app.use(express.static(path.join(__dirname, '../public')))
+app.use(express.static(pathJoin('../public')))
 
 app.get(routes.root, (request, response) => {
-  response.sendFile(path.join(__dirname, './views/index.html'))
+  response.sendFile(pathJoin('./views/index.html'))
 })
 
 app.get(routes.about, (request, response) => {
-  response.send('<p>Hey</p>')
+  response.sendFile(pathJoin('./views/about.html'))
 })
 
 const PORT = process.env.PORT || 3000
