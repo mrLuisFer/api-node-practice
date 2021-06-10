@@ -1,7 +1,7 @@
 const express = require('express')
 const app = express()
 const morgan = require('morgan')
-const fetch = require('node-fetch')
+const fetchUrl = require('./utils/fetchUrl')
 
 // Routes
 const routes = require('./routes/routes')
@@ -24,9 +24,8 @@ app.get(routes.about, (request, response) => {
 
 app.get(routes.posts, async (req, res) => {
   const postsUrl = 'https://jsonplaceholder.typicode.com/posts'
-  const response = await fetch(postsUrl)
-  const data = await response.json()
-  res.contentType('aplication/json')
+
+  const data = await fetchUrl(postsUrl)
 
   if (data !== undefined && data !== null) {
     res.json(data)
