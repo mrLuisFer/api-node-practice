@@ -26,8 +26,21 @@ app.get(routes.posts, async (req, res) => {
   const postsUrl = 'https://jsonplaceholder.typicode.com/posts'
   const response = await fetch(postsUrl)
   const data = await response.json()
+  res.contentType('aplication/json')
 
-  res.send(data)
+  if (data !== undefined && data !== null) {
+    res.json(data)
+  } else {
+    res.json({
+      error: 'The response has an error'
+    })
+  }
+})
+
+app.get(routes.post, (req, res) => {
+  const id = req.params.id
+  console.log(id)
+  res.json(id)
 })
 
 const PORT = process.env.PORT || 3000

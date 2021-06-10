@@ -1,7 +1,8 @@
 const rotues = {
   root: '/',
   about: '/about',
-  posts: '/posts'
+  posts: '/posts',
+  post: '/posts/:id'
 }
 
 module.exports = rotues
