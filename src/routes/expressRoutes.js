@@ -1,8 +1,6 @@
 const express = require('express')
 const router = express.Router()
-const fetchUrl = require('../utils/fetchUrl')
 const routes = require('./routes')
-const pathJoin = require('../utils/pathJoin')
 
 // Routes callbacks
 const route_root = require('./callbacks/route-root')
@@ -20,5 +18,6 @@ router.get(routes.post, (req, res) => {
   console.log(id)
   res.json(id)
 })
+
 
 module.exports = router
