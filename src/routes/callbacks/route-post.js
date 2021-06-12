@@ -1,6 +1,6 @@
-const fetchUrl = require('../../utils/fetchUrl') 
+const fetchUrl = require('../../utils/fetchUrl')
 
-const route_post = (request, response) => {
+const routePost = (request, response) => {
   const id = request.params.id
   console.log(id)
 
@@ -8,12 +8,11 @@ const route_post = (request, response) => {
 
   const { data } = fetchUrl(postUrl)
 
-
   console.log(data)
   response.json({
     id: id,
-    url: postUrl,
-    })
+    url: postUrl
+  })
 }
 
-module.exports = route_post
+module.exports = routePost

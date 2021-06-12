@@ -6,6 +6,7 @@ const expressRoutes = require('./routes/expressRoutes')
 
 const pathJoin = require('./utils/pathJoin')
 
+app.set('view engine', 'ejs')
 // Middlewares
 app.use(express.json())
 app.use(express.static(pathJoin('../public')))

@@ -1,6 +1,6 @@
 const fetchUrl = require('../../utils/fetchUrl')
 
-const route_posts = async (req, res) => {
+const routePosts = async (req, res) => {
   const postsUrl = 'https://jsonplaceholder.typicode.com/posts'
 
   const data = await fetchUrl(postsUrl)
@@ -14,5 +14,4 @@ const route_posts = async (req, res) => {
   }
 }
 
-module.exports = route_posts
-
+module.exports = routePosts
