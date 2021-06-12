@@ -1,6 +1,6 @@
 const express = require('express')
 const router = express.Router()
-const routes = require('./routes')
+const { routes } = require('./routes')
 
 // Routes callbacks
 const routeRoot = require('./callbacks/route-root')
