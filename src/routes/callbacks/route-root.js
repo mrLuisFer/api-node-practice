@@ -1,8 +1,7 @@
 const pathJoin = require('../../utils/pathJoin')
 
-const route_root = (request, response) => {
-  response.sendFile(pathJoin('./views/index.html'))
+const routeRoot = (request, response) => {
+  response.render(pathJoin('./views/index.ejs'), { title: 'Rest Api' })
 }
 
-module.exports = route_root
-
+module.exports = routeRoot

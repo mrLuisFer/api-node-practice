@@ -1,7 +1,7 @@
 const pathJoin = require('../../utils/pathJoin')
 
-const route_about = (request, response) => {
-  response.sendFile(pathJoin('./views/about.html'))
+const routeAbout = (request, response) => {
+  response.render(pathJoin('./views/about.ejs'))
 }
 
-module.exports = route_about
+module.exports = routeAbout

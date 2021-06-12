@@ -1,19 +1,18 @@
-const fetchUrl = require('../../utils/fetchUrl') 
+const fetchUrl = require('../../utils/fetchUrl')
 
-const route_post = (request, response) => {
+const routePost = async (request, response) => {
   const id = request.params.id
-  console.log(id)
 
   const postUrl = `https://jsonplaceholder.typicode.com/posts/${id}`
+  const { data } = await fetchUrl(postUrl)
 
-  const { data } = fetchUrl(postUrl)
-
-
-  console.log(data)
-  response.json({
-    id: id,
-    url: postUrl,
+  if (data !== undefined && data !== null) {
+    response.json(data)
+  } else {
+    response.json({
+      error: 'The response has an error'
     })
+  }
 }
 
-module.exports = route_post
+module.exports = routePost
