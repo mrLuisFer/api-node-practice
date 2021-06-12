@@ -4,27 +4,16 @@ const fetchUrl = require('../utils/fetchUrl')
 const routes = require('./routes')
 const pathJoin = require('../utils/pathJoin')
 
-router.get(routes.root, (request, response) => {
-  response.sendFile(pathJoin('./views/index.html'))
-})
+// Routes callbacks
+const route_root = require('./callbacks/route-root')
+const route_about = require('./callbacks/route-about')
+const route_posts = require('./callbacks/route-posts')
 
-router.get(routes.about, (request, response) => {
-  response.sendFile(pathJoin('./views/about.html'))
-})
+router.get(routes.root, (request, response) => route_root(request, response))
 
-router.get(routes.posts, async (req, res) => {
-  const postsUrl = 'https://jsonplaceholder.typicode.com/posts'
+router.get(routes.about, (request, response) => route_about(request, response))
 
-  const data = await fetchUrl(postsUrl)
-
-  if (data !== undefined && data !== null) {
-    res.json(data)
-  } else {
-    res.json({
-      error: 'The response has an error'
-    })
-  }
-})
+router.get(routes.posts, (request, response) => route_posts(request, response))
 
 router.get(routes.post, (req, res) => {
   const id = req.params.id
