@@ -11,7 +11,9 @@ app.use(express.json())
 app.use(express.static(pathJoin('../public')))
 app.use(morgan('dev'))
 
-// APP Routes
+app.use('/favicon.ico', express.static('/images/favicon.ico'));
+
+	// APP Routes
 app.use(expressRoutes)
 
 const PORT = process.env.PORT || 3000
