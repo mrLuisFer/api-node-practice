@@ -1,3 +1,8 @@
+:root {
+  --blue-color: #2940d3;
+  --purple-color: #867ae9;
+}
+
 html {
   box-sizing: border-box;
 }
@@ -5,6 +10,7 @@ html {
 body {
   font-family: 'Poppins', sans-serif;
   background: #cccccc;
+  scroll-behavior: smooth;
 }
 
 * {
@@ -16,4 +22,42 @@ body {
 
 main {
   padding: 3rem 1rem;
+}
+
+h1 {
+  font-size: 1.5rem;
+  font-weight: 600;
+}
+
+p {
+  line-height: 1.2;
+  margin: 0 0.2rem;
+}
+
+.endpoint-list {
+  margin-top: 1rem;
+  display: flex;
+  flex-direction: column;
+}
+
+.endpoint-list-item {
+  list-style: none;
+  transition: 0.2s ease;
+  margin: 1rem 0;
+  display: inline-block;
+  font-size: 1.1rem;
+}
+
+.endpoint-list-item:hover {
+  transform: scale(1.05);
+  margin-left: 2rem;
+}
+
+a {
+  text-decoration: none;
+  color: var(--blue-color);
+}
+
+a:visited {
+  border-bottom: 0.5px dotted var(--purple-color);
 }

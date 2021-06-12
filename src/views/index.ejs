@@ -10,6 +10,13 @@
       <h1>Welcome to the practice - Rest API</h1>
       <div>
         <p>You can navigate between these different endpoints of the api</p>
+        <ul class="endpoint-list">
+          <% if (endpoints.length) { %> <% endpoints.forEach((endpoint) => { %>
+          <li class="endpoint-list-item">
+            <a href="<%= endpoint.url %>"> <%= endpoint.name %> </a>
+          </li>
+          <% }) %> <% } %>
+        </ul>
       </div>
     </main>
   </body>
