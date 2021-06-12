@@ -1,8 +1,8 @@
-const rotues = {
+const routes = {
   root: '/',
   about: '/about',
   posts: '/posts',
   post: '/posts/:id'
 }
 
-module.exports = rotues
+module.exports = routes
