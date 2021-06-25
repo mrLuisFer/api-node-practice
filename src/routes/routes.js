@@ -25,7 +25,7 @@ const routesTemplate = [
   },
   {
     name: 'post',
-    url: postUrl
+    url: '/posts/1'
   }
 ]
 
